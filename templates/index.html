@@ -22,18 +22,16 @@
                 <th class="border">Director</th>
             </tr>
             </thead>
-            <tbody class="text-center text-sm">
-              {% for film in films %}
-              <tr>
-                <td class="border">{{ film.name }}</td>
-                <td class="border">{{ film.director }}</td>
-              </tr>
-              {% endfor %}
+            <tbody class="text-center text-sm" id="table-body">
+              {% include 'table.html' %}
+
             </tbody>
         </table>
 
         <button class="px-3 py-1 bg-blue-600 text-white ml-4"
-            hx-get="/index">Load More</button>
+            hx-get="/index"
+            hx-target="#table-body"
+            hx-swap="beforeend">Load More</button>
     </div>
 
 </body>
